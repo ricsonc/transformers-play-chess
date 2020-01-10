@@ -4,7 +4,7 @@
 
 The shannon entropy of natural english language is roughly one byte per word, depending on the dataset used. Shannon estimated the number of possible chess games to be 10^120. I've also seen an estimate of 3 reasonable moves per ply (so 10^40 possible 40 move games). 
 
-This begs question: just how much information is there in a chess move?
+This begs the question: just how much information is there in a chess move?
 
 It's a sort of a weird question, seeing as the optimal chess strategy would likely have a (relatively) small number of branches which are able to force a win for white or black, or force a draw. In some sense, measuring the information content of a chess game is a bit like measuring how many mistakes human players make. But I think there is some value in quantifying the number of games which are "interesting to imperfect humans".
 
