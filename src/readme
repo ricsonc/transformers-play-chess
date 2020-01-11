@@ -1,0 +1,31 @@
+
+data in readable form (81G):
+https://www.dropbox.com/sh/ts72l0ulb6wxi3c/AAAurS9jnFWFwahJaRxwLZJda?dl=0
+
+data after being processed+split by tensor2tensor (note, this does NOT include oct/2019, which is used as hold-out) (38G):
+https://www.dropbox.com/sh/fuyjqj9xfwuq2na/AAABZOCUJMp9k046TsNnP4nGa?dl=0
+
+saved checkpoints (24G):
+https://www.dropbox.com/sh/ivpk26bmev14m1l/AACR5yLakVf-hykKKR6sfs-1a?dl=0
+
+---
+
+extract_core.py -- this reads dumps from the lichess game database and preprocesses / filters the data. you shouldn't need to run this, since i also uploaded the processed data already.
+
+genvocab.py -- this generates the vocab file, although i should have uploaded this as well
+
+chessprob.py -- this defines the chess problem, which tensor2tensor somehow uses
+
+runprob.sh -- run this file... comment out the appropriate section to train or test
+
+bin -- move files to site-packages/tensor2tensor/bin
+utils -- move files to site-packages/tensor2tensor/utils
+
+---
+
+to test the model, go to the "decode_chess" function in utils/decoding.py
+
+set TESTMODE = True to compute perplexity
+set TESTMODE = False to sample from the model / play against it
+set TWOPLAYER = True to play against the model
+

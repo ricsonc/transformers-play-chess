@@ -24,7 +24,7 @@ The lichess.org game database contains at the time of writing roughly 1 billion 
 
 While I wasn't very picky about getting only the best games, I did want some minimal quality control. Therefore I considered only games where both players had a rating of at least 1510 (I believe new accounts start at a rating of 1500), and where both players had at least 5 minutes to play the game, and where the game was at most 100 moves (200-ply). If both players had a rating of at least 2000, the time requirement was bypassed. Note that for time controls with increment, I converted it into a single number by assuming the game was 40 moves long. Roughly 21 of games passed this first filter. I further divided my dataset up by considering games where both players had a rating of at least 2000 and the time control was at least 5 minutes. Less than 1% of games met this filter, but I didn't find this too worrying as that was still several million games.
 
-Instead of training two different models, or fine-tuning a trained model on the "better" games, I simply added two new tokens to the vocabulary, A, and B, and prefaced each game with one of the two tokens. A was used for the more stringent filter, and B for the res. I did this primarily to save time. Note that it's fairly trivial to "undo" this conditioning just by summing over the two possible first tokens. I was hoping strategy this would allow me to train with a massive dataset, but then to condition on A to generate higher quality games.
+Instead of training two different models, or fine-tuning a trained model on the "better" games, I simply added two new tokens to the vocabulary, A, and B, and prefaced each game with one of the two tokens. A was used for the more stringent filter, and B for the rest. I did this primarily to save time. Note that it's fairly trivial to "undo" this conditioning just by summing over the two possible first tokens. I was hoping strategy this would allow me to train with a massive dataset, but then to condition on A to generate higher quality games.
 
 In retrospect, even strong players sometimes run low on time and who wins the game is determined by who moves their pieces faster, with almost total disregard for how much sense the move makes. Since most of the games have each move individually timestamped, it would be ideal to filter out games in which some sort of time crunch happens. However I did not do this.
 
@@ -106,4 +106,4 @@ Starting on move 35 of this game, T78 pulls off a nice tactic, trading off the r
 
 ## Code
 
-My code and data is very terribly hacked together. I'm willing to release it if someone really wants it, but don't plan to otherwise. I expect with some minor adjustments, Shawn's GPT2 model would be much stronger than this one anyway.
+See the `src` directory.
