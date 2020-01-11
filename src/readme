@@ -5,7 +5,7 @@ https://www.dropbox.com/sh/ts72l0ulb6wxi3c/AAAurS9jnFWFwahJaRxwLZJda?dl=0
 data after being processed+split by tensor2tensor (note, this does NOT include oct/2019, which is used as hold-out) (38G):
 https://www.dropbox.com/sh/fuyjqj9xfwuq2na/AAABZOCUJMp9k046TsNnP4nGa?dl=0
 
-saved checkpoints (24G):
+saved checkpoints (18G):
 https://www.dropbox.com/sh/ivpk26bmev14m1l/AACR5yLakVf-hykKKR6sfs-1a?dl=0
 
 ---
